@@ -27,4 +27,4 @@ Most content providers require to add special permissions in `AndroidManifest.xm
 		}, function (err) {
 			console.log("error query");
 			output.innerText = "query error: " + err;
-		});
+    });
