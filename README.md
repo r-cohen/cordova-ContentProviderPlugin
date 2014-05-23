@@ -9,7 +9,7 @@ http://developer.android.com/reference/android/provider/package-summary.html
 
 ## Note About Permissions
 
-Most content providers require to add special permissions in `AndroidManifest.xml` file. For example, if you want to query the `content://sms/` content, you will need to add the following line in the manifest (see Android SDK for more info):
+Most content providers require to add special permissions in `AndroidManifest.xml` file. For example, if you want to query the `content://sms/` provider, you will need to add the following line in the manifest (see Android SDK for more info):
 
     <uses-permission android:name="android.permission.READ_SMS" />
 
