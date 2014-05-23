@@ -23,8 +23,6 @@ Most content providers require to add special permissions in `AndroidManifest.xm
 			sortOrder: "date DESC"
 		}, function (data) {
 			console.log(JSON.stringify(data));
-			viewMethods.outputData(output, data);
 		}, function (err) {
 			console.log("error query");
-			output.innerText = "query error: " + err;
-    });
+		});
