@@ -2,12 +2,12 @@
 
 A generic Cordova plugin for querying Content Providers on Android devices.
 
-Content Providers in Android can be usefull to query information such as SMS, Contacts, Calendar, and much more. Some applications use Content Providers to store their data, and this data can be queried by any third party app.
-
 ## Android Content Providers
 
 A complete list of available content providers in Android can be found here:
 http://developer.android.com/reference/android/provider/package-summary.html
+
+Content Providers in Android can be usefull to query information such as SMS, Contacts, Calendar, and much more. Some applications use Content Providers to store their data, and this data can be queried by any third party app.
 
 ## Note About Permissions
 
