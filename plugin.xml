@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+		id="com.phearme.cordovaplugin.ContentProviderPlugin" version="0.2.3">
+	<name>ContentProviderPlugin</name>
+	<description>A generic Cordova plugin for querying Content Providers on Android devices.</description>
+	<license>Apache 2.0</license>
+	<keywords>cordova,device,content,provider,contentprovider,android</keywords>
+	<js-module src="www/ContentProviderPlugin.js" name="ContentProviderPlugin">
+		<clobbers target="contentproviderplugin" />
+	</js-module>
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="ContentProviderPlugin">
+				<param name="android-package" value="com.phearme.cordovaplugin.contentproviderplugin.ContentProviderPlugin" />
+			</feature>
+		</config-file>
+	</platform>
+</plugin>
