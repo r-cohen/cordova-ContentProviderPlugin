@@ -1,4 +1,4 @@
-cordova.define("com.phearme.cordovaplugin.contentproviderplugin.ContentProviderPlugin", function (require, exports, module) { function ContentProviderPlugin() {
+function ContentProviderPlugin() {
 }
 
 var pluginMethods = [
@@ -21,4 +21,3 @@ ContentProviderPlugin.install = function () {
 };
 
 cordova.addConstructor(ContentProviderPlugin.install);
-});
