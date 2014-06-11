@@ -17,7 +17,7 @@ Most content providers require to add special permissions in `AndroidManifest.xm
 
 ## Installation
 
-Through Cordova Repo (latest):
+Through Cordova Repo (stable):
 
     cordova plugin add com.phearme.cordovaplugin.contentproviderplugin
 
