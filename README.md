@@ -15,6 +15,16 @@ Most content providers require to add special permissions in `AndroidManifest.xm
 
     <uses-permission android:name="android.permission.READ_SMS" />
 
+## Installation
+
+Through Cordova Repo (latest):
+
+    cordova plugin add com.phearme.cordovaplugin.contentproviderplugin
+
+Through Github Repo (latest):
+
+    cordova plugin add https://github.com/phearme/cordova-ContentProviderPlugin
+
 ## Example Usage
 
     window.plugins.contentproviderplugin.query({
