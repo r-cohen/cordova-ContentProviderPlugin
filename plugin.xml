@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-		id="com.phearme.cordovaplugin.ContentProviderPlugin" version="0.2.6">
+		id="com.phearme.cordovaplugin.ContentProviderPlugin" version="0.2.7">
 	<name>ContentProviderPlugin</name>
 	<description>A generic Cordova plugin for querying Content Providers on Android devices.</description>
 	<license>Apache 2.0</license>
