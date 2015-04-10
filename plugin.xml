@@ -15,5 +15,12 @@
 			</feature>
 		</config-file>
 		<source-file src="src/android/com/phearme/cordovaplugin/ContentProviderPlugin.java" target-dir="src/com/phearme/cordovaplugin" />
+        <!-- Following is an exemple of how to add permissions to the target AndroidManifest.xml -->
+        <!--
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
+        -->
 	</platform>
 </plugin>
