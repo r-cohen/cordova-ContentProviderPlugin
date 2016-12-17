@@ -99,19 +99,31 @@ public class ContentProviderPlugin extends CordovaPlugin {
 		// run query
 		Cursor result = cordova.getActivity().getContentResolver().query(contentUri, projection, selection, selectionArgs, sortOrder);
 		resultJSONArray = new JSONArray();
-		while (result.moveToNext()) {
-			JSONObject resultRow = new JSONObject();
-			int colCount = result.getColumnCount();
-			for (int i = 0; i < colCount; i++) {
-				try {
-					resultRow.put(result.getColumnName(i), result.getString(i));
-				} catch (JSONException e) {
-					resultRow = null;
+		
+		if(result == null) {
+			callback.error(WRONG_PARAMS);
+		} else {
+		
+			try {
+		
+				while (result != null && result.moveToNext()) {
+					JSONObject resultRow = new JSONObject();
+					int colCount = result.getColumnCount();
+					for (int i = 0; i < colCount; i++) {
+						try {
+							resultRow.put(result.getColumnName(i), result.getString(i));
+						} catch (JSONException e) {
+							resultRow = null;
+						}
+					}
+					resultJSONArray.put(resultRow);
 				}
-			}
-			resultJSONArray.put(resultRow);
-		}
-		result.close();
-		callback.success(resultJSONArray);
+			} finally {
+				if(result != null) result.close();
+	        	}
+		
+			callback.success(resultJSONArray);
+			
+		}	
 	}
 }
