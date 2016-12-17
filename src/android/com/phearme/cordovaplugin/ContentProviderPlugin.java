@@ -11,6 +11,7 @@ import android.net.Uri;
 
 public class ContentProviderPlugin extends CordovaPlugin {
 	private String WRONG_PARAMS = "Wrong parameters.";
+	private String UNKNOWN_ERROR = "Unknown error.";
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		final JSONArray methodArgs = args;
@@ -99,19 +100,32 @@ public class ContentProviderPlugin extends CordovaPlugin {
 		// run query
 		Cursor result = cordova.getActivity().getContentResolver().query(contentUri, projection, selection, selectionArgs, sortOrder);
 		resultJSONArray = new JSONArray();
-		while (result.moveToNext()) {
-			JSONObject resultRow = new JSONObject();
-			int colCount = result.getColumnCount();
-			for (int i = 0; i < colCount; i++) {
-				try {
-					resultRow.put(result.getColumnName(i), result.getString(i));
-				} catch (JSONException e) {
-					resultRow = null;
+		
+		// Some providers return null if an error occurs, others throw an exception
+		if(result == null) {
+			callback.error(UNKNOWN_ERROR);
+		} else {
+		
+			try {
+		
+				while (result != null && result.moveToNext()) {
+					JSONObject resultRow = new JSONObject();
+					int colCount = result.getColumnCount();
+					for (int i = 0; i < colCount; i++) {
+						try {
+							resultRow.put(result.getColumnName(i), result.getString(i));
+						} catch (JSONException e) {
+							resultRow = null;
+						}
+					}
+					resultJSONArray.put(resultRow);
 				}
-			}
-			resultJSONArray.put(resultRow);
-		}
-		result.close();
-		callback.success(resultJSONArray);
+			} finally {
+				if(result != null) result.close();
+	        	}
+		
+			callback.success(resultJSONArray);
+			
+		}	
 	}
 }
