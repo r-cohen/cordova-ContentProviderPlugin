@@ -11,6 +11,7 @@ import android.net.Uri;
 
 public class ContentProviderPlugin extends CordovaPlugin {
 	private String WRONG_PARAMS = "Wrong parameters.";
+	private String UNKNOWN_ERROR = "Unknown error.";
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		final JSONArray methodArgs = args;
@@ -100,8 +101,9 @@ public class ContentProviderPlugin extends CordovaPlugin {
 		Cursor result = cordova.getActivity().getContentResolver().query(contentUri, projection, selection, selectionArgs, sortOrder);
 		resultJSONArray = new JSONArray();
 		
+		// Some providers return null if an error occurs, others throw an exception
 		if(result == null) {
-			callback.error(WRONG_PARAMS);
+			callback.error(UNKNOWN_ERROR);
 		} else {
 		
 			try {
