@@ -1,0 +1,29 @@
+{
+  "name": "com.phearme.cordovaplugin.ContentProviderPlugin",
+  "version": "0.2.7",
+  "description": "A generic Cordova plugin for querying Content Providers on Android devices.",
+  "cordova": {
+    "id": "com.phearme.cordovaplugin.ContentProviderPlugin",
+    "platforms": [
+      "android"
+     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phearme/cordova-ContentProviderPlugin.git"
+  },
+  "keywords": [
+    "cordova",
+    "device",
+    "content",
+    "provider",
+    "contentprovider",
+    "android"
+  ],
+  "author": "phearme",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/phearme/cordova-ContentProviderPlugin/issues"
+  },
+  "homepage": "https://github.com/phearme/cordova-ContentProviderPlugin#readme"
+}
