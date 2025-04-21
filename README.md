@@ -43,6 +43,8 @@ Through Github Repo (latest):
 
 
 
+[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="60" />](https://www.buymeacoffee.com/raphael.cohen)
+
 #### Licence
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
